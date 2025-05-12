@@ -1,0 +1,32 @@
+auth.onAuthStateChanged(user => {
+  document.getElementById("app").style.display = user ? "block" : "none";
+});
+
+function login() {
+  auth.signInWithEmailAndPassword(email.value, password.value).catch(alert);
+}
+
+function register() {
+  auth.createUserWithEmailAndPassword(email.value, password.value).catch(alert);
+}
+
+function logout() {
+  auth.signOut();
+}
+
+function addExpense() {
+  const data = {
+    desc: desc.value,
+    amount: parseFloat(amount.value),
+    time: new Date()
+  };
+  db.collection("expenses").add(data);
+}
+
+db.collection("expenses").orderBy("time", "desc").onSnapshot(snapshot => {
+  list.innerHTML = '';
+  snapshot.forEach(doc => {
+    const d = doc.data();
+    list.innerHTML += `<li>${d.desc} - ₹${d.amount}</li>`;
+  });
+});
