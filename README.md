@@ -4,6 +4,8 @@ Topic:   Personal Expense Tracker using Firebase (SaaS)
   
 The Personal Expense Tracker is a simple web-based SaaS application designed to help users manage their income, expenses, and budgets in one place. It allows users to track their daily spending habits, set financial goals, and visualize their balance in real-time using a clean and interactive interface. This project is deployed using Firebase Hosting, showcasing the integration of cloud technologies in modern web applications.
 
+Live Demo: https://expense-tracker-dbc2c.web.app
+
 Main Features of the Application:
 1. Add income and expenses with description and type.
 2. Set a monthly or custom budget.
